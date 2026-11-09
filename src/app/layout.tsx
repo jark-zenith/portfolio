@@ -1,3 +1,4 @@
+import Script from "next/script";
 import Navbar from "@/components/navbar";
 import { ThemeProvider } from "@/components/theme-provider";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -70,6 +71,9 @@ export default function RootLayout({
           geistMono.variable
         )}
       >
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-EV6FE1VP8S" strategy="afterInteractive" />
+        <Script id="google-analytics-pruden" strategy="afterInteractive">{`window.dataLayer = window.dataLayer || []; function gtag(){window.dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-EV6FE1VP8S');`}</Script>
+
         <ThemeProvider attribute="class" defaultTheme="light">
           <TooltipProvider delayDuration={0}>
             <div className="absolute inset-0 top-0 left-0 right-0 h-[100px] overflow-hidden z-0">
